@@ -13,7 +13,7 @@
               <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="playerLevel" VariableExpression="${_ffxivparty[${_ffxivplayer}].level}" ActionType="Variable">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Bloodletter Recast" VariableExpression="min(max(${_systemtimems},${var:Bloodletter Recast})+15000,${_systemtimems}+30000)" ActionType="Variable">
+              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariatebleName="Bloodletter Recast" VariableExpression="min(max(${_systemtimems},${var:Bloodletter Recast})+15000,${_systemtimems}+30000)" ActionType="Variable">
                 <Condition Enabled="true" Grouping="And">
                   <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="^(?:Bloodletter|Rain of Death|Heartbreak Shot)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
                   <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="84" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
