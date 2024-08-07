@@ -1,0 +1,916 @@
+<?xml version="1.0"?>
+<TriggernometryExport PluginVersion="1.2.0.7">
+  <ExportedFolder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2199023255552" Id="c5748559-3c71-42c2-a27d-6ae07cfb76f8" Name="PCT 240805" Enabled="true">
+    <Folders />
+    <Triggers>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="PCT Actions (OGCD)" Id="24be37f2-bd67-4ba7-8615-b4295d4efcf1" RegularExpression="" Description="&#xD;&#xA;&#xD;&#xA;^(?&lt;type&gt;2[12])\|(?&lt;timestamp&gt;[^|]*)\|(?&lt;sourceId&gt;[^|]*)\|(?&lt;source&gt;[^|]*)\|(?&lt;id&gt;[^|]*)\|(?&lt;ability&gt;[^|]*)\|(?&lt;targetId&gt;[^|]*)\|(?&lt;target&gt;[^|]*)\|(?&lt;flags&gt;[^|]*)\|(?&lt;damage&gt;[^|]*)\|(?:[^|]*\|){14}(?&lt;targetCurrentHp&gt;[^|]*)\|(?&lt;targetMaxHp&gt;[^|]*)\|(?&lt;targetCurrentMp&gt;[^|]*)\|(?&lt;targetMaxMp&gt;[^|]*)\|(?:[^|]*\|){2}(?&lt;targetX&gt;[^|]*)\|(?&lt;targetY&gt;[^|]*)\|(?&lt;targetZ&gt;[^|]*)\|(?&lt;targetHeading&gt;[^|]*)\|(?&lt;currentHp&gt;[^|]*)\|(?&lt;maxHp&gt;[^|]*)\|(?&lt;currentMp&gt;[^|]*)\|(?&lt;maxMp&gt;[^|]*)\|(?:[^|]*\|){2}(?&lt;x&gt;[^|]*)\|(?&lt;y&gt;[^|]*)\|(?&lt;z&gt;[^|]*)\|(?&lt;heading&gt;[^|]*)\|(?&lt;sequence&gt;[^|]*)\|(?&lt;targetIndex&gt;[^|]*)\|(?&lt;targetCount&gt;[^|]*)\|">
+        <Actions>
+          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="ogcdCount" VariableExpression="1" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Living Muse Recast" VariableExpression="max(${_systemtimems},${var:Living Muse Recast})+40000" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="^(?:Pom Muse|Winged Muse|Clawed Muse|Fanged Muse)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Mog of the Ages Recast" VariableExpression="${_systemtimems}+30000" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="Mog of the Ages" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Steel Muse Recast" VariableExpression="max(${_systemtimems},${var:Steel Muse Recast})+60000" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="Striking Muse" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Subtractive Palette Recast" VariableExpression="${_systemtimems}+1000" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="Subtractive Palette" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Scenic Muse Recast" VariableExpression="${_systemtimems}+120000" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="Starry Muse" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Swiftcast Recast" VariableExpression="${_systemtimems}+60000" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="Swiftcast" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Swiftcast Recast" VariableExpression="${_systemtimems}+40000" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="Swiftcast" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="98" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Lucid Dreaming Recast" VariableExpression="${_systemtimems}+60000" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="Lucid Dreaming" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="And" />
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="PCT Keypresses (Hotbar Switches)" Id="752668ef-6122-44f4-9b0d-3f395789665b" RegularExpression="" PrevActions="Interrupt">
+        <Actions>
+          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="hotbarSwitchKey" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="100">
+            <Condition Enabled="false" Grouping="And" />
+          </Action>
+          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="hotbarSwitchKey" VariableExpression="2" ActionType="Variable" Description="Hammer (Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:aoeToggle}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="10000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="10000" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="hotbarSwitchKey" VariableExpression="3" ActionType="Variable" Description="Comet (Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Monochrome Tones Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Paint}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="hotbarSwitchKey" VariableExpression="3" ActionType="Variable" Description="Comet (prevent Palette overcap)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Monochrome Tones Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Palette Gauge}" ExpressionTypeL="Numeric" ExpressionR="75" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Aetherhues II Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="4" Enabled="False" ActionType="Variable" Description="Rainbow Drip" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Aetherhues II Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Paint}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="hotbarSwitchKey" VariableExpression="2" ActionType="Variable" Description="Hammer (low duration)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="15000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="5" Enabled="False" ActionType="Variable" Description="Star Prism" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Aetherhues II Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Paint}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="8" KeypressType="WindowMessage" KeyPressCode="${var:hotbarSwitchKey}+111" KeyPressWindow="^FINAL FANTASY XIV$" KeyPressProcId="${_ffxivprocid}" SoundRouting="None" TTSRouting="None" ActionType="KeyPress">
+            <Condition Enabled="false" Grouping="And" />
+          </Action>
+          <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="7" ActionType="Variable" Description="No Subtractive Palette" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="9" ActionType="Variable" Description="Creature Motif (Living Muse third charge almost ready)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="88500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="10" ActionType="Variable" Description="Weapon Motif (Steel Muse second charge almost ready)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="86" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="68500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="12" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="9" ActionType="Variable" Description="Creature Motif (Living Muse second charge almost ready)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="48500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="13" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="8" ActionType="Variable" Description="Subtractive Palette" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="14" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="9" ActionType="Variable" Description="Creature Motif (prep for Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-40000" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+16700" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-80000" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+16700" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="10" ActionType="Variable" Description="Weapon Motif (prep for Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="86" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+16700" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-60000" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+16700" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="7" ActionType="Variable" Description="Hyperphantasia" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hyperphantasia Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Inspiration Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="8" ActionType="Variable" Description="Hyperphantasia (Subtractive Palette)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hyperphantasia Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Inspiration Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="18" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="8" ActionType="Variable" Description="Subtractive Palette (Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="19" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="9" ActionType="Variable" Description="Creature Motif (Living Muse almost ready)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="8500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="20" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="10" ActionType="Variable" Description="Weapon Motif (Steel Muse almost ready)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="8500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="21" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="primaryButtonKey" VariableExpression="11" ActionType="Variable" Description="Landscape Motif (Scenic Muse almost ready)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Landscape Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Scenic Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="8500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="22" KeypressType="WindowMessage" KeyPressCode="${var:primaryButtonKeyy}+95" KeyPressWindow="^FINAL FANTASY XIV$" KeyPressProcId="${_ffxivprocid}" SoundRouting="None" TTSRouting="None" ActionType="KeyPress">
+            <Condition Enabled="false" Grouping="And" />
+          </Action>
+          <Action OrderNumber="23" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="movementButtonKey" VariableExpression="8" ActionType="Variable" Description="Holy for movement" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Paint}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="24" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="movementButtonKey" VariableExpression="9" ActionType="Variable" Description="Comet for movement" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Monochrome Tones Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Paint}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="25" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="movementButtonKey" VariableExpression="7" ActionType="Variable" Description="Hammer Stamp for movement" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="26" KeypressType="WindowMessage" KeyPressCode="${var:movementButtonKey}+111" KeyPressWindow="^FINAL FANTASY XIV$" KeyPressProcId="${_ffxivprocid}" SoundRouting="None" TTSRouting="None" ActionType="KeyPress">
+            <Condition Enabled="false" Grouping="And" />
+          </Action>
+          <Action OrderNumber="27" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="motifButtonKey" VariableExpression="10" ActionType="Variable" Description="Creature Motif" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="28" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="motifButtonKey" VariableExpression="11" ActionType="Variable" Description="Weapon Motif" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="29" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="motifButtonKey" VariableExpression="12" ActionType="Variable" Description="Landscape Motif" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Landscape Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="30" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="motifButtonKey" VariableExpression="10" ActionType="Variable" Description="Creature Motif (Living Muse ready first)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}" ExpressionTypeL="Numeric" ExpressionR="${var:Steel Muse Recast}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="31" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="motifButtonKey" VariableExpression="11" ActionType="Variable" Description="Weapon Motif (Steel Muse ready first)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              </ConditionGroup>
+              <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}" ExpressionTypeL="Numeric" ExpressionR="${var:Living Muse Recast}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="32" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="motifButtonKey" VariableExpression="12" ActionType="Variable" Description="Landscape Motif (Scenic Muse ready first)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Landscape Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Scenic Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="min(${var:Steel Muse Recast},${var:Living Muse Recast})-${_systemtimems}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="33" KeypressType="WindowMessage" KeyPressCode="${var:motifButtonKey}+111" KeyPressWindow="^FINAL FANTASY XIV$" KeyPressProcId="${_ffxivprocid}" SoundRouting="None" TTSRouting="None" ActionType="KeyPress">
+            <Condition Enabled="false" Grouping="And" />
+          </Action>
+          <Action OrderNumber="34" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="1" Enabled="False" ActionType="Variable" Description="Aetherhue / Aetherhue II (low duration)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="max(${var:Aetherhues Duration},${var:Aetherhues II Duration})-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="max(${var:Aetherhues Duration},${var:Aetherhues II Duration})-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="6600" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="35" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="3" Enabled="False" ActionType="Variable" Description="Motifs" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Landscape Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="36" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="2" Enabled="False" ActionType="Variable" Description="Subtractive Palette + Aetherhue / Aetherhue II (low duration)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="max(${var:Aetherhues Duration},${var:Aetherhues II Duration})-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="max(${var:Aetherhues Duration},${var:Aetherhues II Duration})-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="6600" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="37" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="3" Enabled="False" ActionType="Variable" Description="Motifs (muses almost ready)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="8000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="8000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Landscape Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Scenic Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="8000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="38" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="4" Enabled="False" ActionType="Variable" Description="Motifs (Holy for movement)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="4500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="4500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                </ConditionGroup>
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Landscape Canvas}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Scenic Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="4500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                </ConditionGroup>
+              </ConditionGroup>
+              <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Paint}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="39" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="2" Enabled="False" ActionType="Variable" Description="Subtractive Palette (Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="40" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="5" Enabled="False" ActionType="Variable" Description="Holy (prevent overcap with low duration)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Aetherhues II Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Paint}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Aetherhues II Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="9900" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="41" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="functionKey" VariableExpression="5" Enabled="False" ActionType="Variable" Description="Holy (prevent overcap)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Aetherhues II Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Paint}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="And" />
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="PCT Status" Id="c0773569-94b2-4581-9837-bfb06ec790b3" RegularExpression="^(?&lt;type&gt;26|30)\|(?&lt;timestamp&gt;[^|]*)\|(?&lt;effectId&gt;[^|]*)\|(?&lt;effect&gt;[^|]*)\|(?&lt;duration&gt;[^|]*)\|(?&lt;sourceId&gt;[^|]*)\|(?&lt;source&gt;[^|]*)\|(?&lt;targetId&gt;[^|]*)\|(?&lt;target&gt;[^|]*)\|">
+        <Actions>
+          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="${effect} Duration" VariableExpression="${duration}*1000+${_systemtimems}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="And" />
+          </Action>
+          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TriggerId="752668ef-6122-44f4-9b0d-3f395789665b" TriggerForce="regexp" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="And" />
+          </Action>
+        </Actions>
+        <Condition Enabled="true" Grouping="And">
+          <ConditionSingle Enabled="true" ExpressionL="${target}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+        </Condition>
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="PCT Actions (GCD)" Id="d9790e00-d957-4397-9715-fd8b88244fe7" RegularExpression="" Description="^(?&lt;type&gt;2[12])\|(?&lt;timestamp&gt;[^|]*)\|(?&lt;sourceId&gt;[^|]*)\|(?&lt;source&gt;[^|]*)\|(?&lt;id&gt;[^|]*)\|(?&lt;ability&gt;[^|]*)\|(?&lt;targetId&gt;[^|]*)\|(?&lt;target&gt;[^|]*)\|(?&lt;flags&gt;[^|]*)\|(?&lt;damage&gt;[^|]*)\|(?:[^|]*\|){14}(?&lt;targetCurrentHp&gt;[^|]*)\|(?&lt;targetMaxHp&gt;[^|]*)\|(?&lt;targetCurrentMp&gt;[^|]*)\|(?&lt;targetMaxMp&gt;[^|]*)\|(?:[^|]*\|){2}(?&lt;targetX&gt;[^|]*)\|(?&lt;targetY&gt;[^|]*)\|(?&lt;targetZ&gt;[^|]*)\|(?&lt;targetHeading&gt;[^|]*)\|(?&lt;currentHp&gt;[^|]*)\|(?&lt;maxHp&gt;[^|]*)\|(?&lt;currentMp&gt;[^|]*)\|(?&lt;maxMp&gt;[^|]*)\|(?:[^|]*\|){2}(?&lt;x&gt;[^|]*)\|(?&lt;y&gt;[^|]*)\|(?&lt;z&gt;[^|]*)\|(?&lt;heading&gt;[^|]*)\|(?&lt;sequence&gt;[^|]*)\|(?&lt;targetIndex&gt;[^|]*)\|(?&lt;targetCount&gt;[^|]*)\|">
+        <Actions>
+          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="aoeToggle" VariableExpression="0" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="^(?:Fire in Red|Aero in Green|Water in Blue|Blizzard in Cyan|Stone in Yellow|Thunder in Magenta)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="aoeToggle" VariableExpression="1" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="^(?:Fire II in Red|Aero II in Green|Water II in Blue|Blizzard II in Cyan|Stone II in Yellow|Thunder II in Magenta)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TriggerId="752668ef-6122-44f4-9b0d-3f395789665b" TriggerForce="regexp" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="ogcdCount" VariableExpression="0" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="ogcdMax" VariableExpression="1" TriggerId="28537205-d258-4cf0-b8c7-f030c22b52fd" TriggerForce="regexp" ActionType="Variable" Description="Removes second weave from actions with a short GCD">
+            <Condition Enabled="false" Grouping="And" />
+          </Action>
+          <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="ogcdMax" VariableExpression="2" TriggerId="28537205-d258-4cf0-b8c7-f030c22b52fd" TriggerForce="regexp" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="^(?:Hammer Stamp|Holy in White|Hammer Brush|Polishing Hammer|Comet in Black|Star Prism)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="ogcdMax" VariableExpression="2" TriggerId="28537205-d258-4cf0-b8c7-f030c22b52fd" TriggerForce="regexp" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Swiftcast Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="-2500" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Swiftcast Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="^(?:Fire in Red|Aero in Green|Water in Blue|Fire II in Red|Pom Motif|Wing Motif|Aero II in Green|Water II in Blue|Hammer Motif|Blizzard in Cyan|Blizzard II in Cyan|Stone in Yellow|Thunder in Magenta|Stone II in Yellow|Thunder II in Magenta|Starry Sky Motif|Rainbow Drip|Claw Motif|Maw Motif|Sleep)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="12" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="13" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="ogcdCount" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="500">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="14" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="18" SoundRouting="None" TTSRouting="None" TriggerId="5c87da04-b40b-423f-b548-4cc1b40c325c" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="100">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:ogcdCount}" ExpressionTypeL="Numeric" ExpressionR="${var:ogcdMax}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="And" />
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="PCT Gauge" Id="661e7d29-cdbc-4a86-9239-6fc1f15a18c7" RegularExpression="^(?&lt;type&gt;31)\|(?&lt;timestamp&gt;[^|]*)\|(?&lt;id&gt;[^|]*)\|(?&lt;data0&gt;[^|]*)\|(?&lt;data1&gt;[^|]*)\|(?&lt;data2&gt;[^|]*)\|(?&lt;data3&gt;[^|]*)\|" Description="^(?&lt;type&gt;31)\|(?&lt;timestamp&gt;[^|]*)\|(?&lt;id&gt;[^|]*)\|(?&lt;data0&gt;[^|]*)\|(?&lt;data1&gt;[^|]*)\|(?&lt;data2&gt;[^|]*)\|(?&lt;data3&gt;[^|]*)\|&#xD;&#xA;&#xD;&#xA;plugin/CactbotEventSource/FFXIVProcessIntl.cs&#xD;&#xA;data0 is 4 offsets&#xD;&#xA;00(offset2) 00(offset1) 00(offset0) 00(job number)&#xD;&#xA;&#xD;&#xA;data1 is 4 offsets&#xD;&#xA;00(offset6) 00(offset5) 00(offset4) 00(offset3)&#xD;&#xA;&#xD;&#xA;Presumably pattern continues from here">
+        <Actions>
+          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="data0" VariableExpression="${func:padleft(48,8):${data0}}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="data1" VariableExpression="${func:padleft(48,8):${data1}}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="data2" VariableExpression="${func:padleft(48,8):${data2}}" Enabled="False" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="data3" VariableExpression="${func:padleft(48,8):${data3}}" Enabled="False" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="canvasFlags" VariableExpression="hex2dec(${func:substring(6,2):${var:data1}})" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="portraitFlags" VariableExpression="hex2dec(${func:substring(4,2):${var:data1}})" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Palette Gauge" VariableExpression="hex2dec(${func:substring(4,2):${var:data0}})" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Paint" VariableExpression="hex2dec(${func:substring(0,2):${var:data0}})" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Creature Canvas" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Creature Canvas" VariableExpression="Pom" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:canvasFlags}%32%16%8%4%2" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Creature Canvas" VariableExpression="Wings" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:canvasFlags}%32%16%8%4/2)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="12" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Creature Canvas" VariableExpression="Claw" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:canvasFlags}%32%16%8/4)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="13" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Creature Canvas" VariableExpression="Fangs" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:canvasFlags}%32%16/8)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="14" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Weapon Canvas" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Weapon Canvas" VariableExpression="Hammer" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:canvasFlags}%32/16)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Landscape Canvas" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Landscape Canvas" VariableExpression="Starry Sky" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:canvasFlags}/32)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="18" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Portrait" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="19" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Portrait" VariableExpression="Pom" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:portraitFlags}%32%16%8%4%2" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="20" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Portrait" VariableExpression="Wings" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:portraitFlags}%32%16%8%4/2)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="21" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Portrait" VariableExpression="Claw" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:portraitFlags}%32%16%8/4)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="22" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Portrait" VariableExpression="Fangs" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:portraitFlags}%32%16/8)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="23" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Portrait" VariableExpression="Moogle" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:portraitFlags}%32/16)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="24" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="Portrait" VariableExpression="Madeen" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="floor(${var:portraitFlags}/32)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="25" SoundRouting="None" TTSRouting="None" TriggerId="752668ef-6122-44f4-9b0d-3f395789665b" TriggerForce="regexp" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="And" />
+          </Action>
+          <Action OrderNumber="26" LogMessageText="${var:Paint} | ${var:Creature Canvas} | ${var:Weapon Canvas} | ${var:Landscape Canvas}" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="LogMessage">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="27" LogMessageText="${func:padleft(48,8):${data0}} ${func:padleft(48,8):${data1}} ${func:padleft(48,8):${data2}} ${func:padleft(48,8):${data3}}" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="LogMessage">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="PCT Actions" Id="0c42998d-2123-4c35-b1c5-2f058f4a4b2f" RegularExpression="^(?&lt;type&gt;2[12])\|(?&lt;timestamp&gt;[^|]*)\|(?&lt;sourceId&gt;[^|]*)\|(?&lt;source&gt;[^|]*)\|(?&lt;id&gt;[^|]*)\|(?&lt;ability&gt;Fire in Red|Aero in Green|Water in Blue|Fire II in Red|Creature Motif|Pom Motif|Wing Motif|Aero II in Green|Water II in Blue|Weapon Motif|Hammer Stamp|Hammer Motif|Blizzard in Cyan|Blizzard II in Cyan|Stone in Yellow|Thunder in Magenta|Stone II in Yellow|Thunder II in Magenta|Landscape Motif|Starry Sky Motif|Holy in White|Hammer Brush|Polishing Hammer|Comet in Black|Rainbow Drip|Claw Motif|Maw Motif|Star Prism|Sleep|Tempera Coat|Smudge|Living Muse|Mog of the Ages|Pom Muse|Winged Muse|Steel Muse|Striking Muse|Subtractive Palette|Scenic Muse|Starry Muse|Tempera Grassa|Clawed Muse|Fanged Muse|Retribution of the Madeen|Addle|Lucid Dreaming|Swiftcast|Surecast)\|(?&lt;targetId&gt;[^|]*)\|(?&lt;target&gt;[^|]*)\|(?&lt;flags&gt;[^|]*)\|(?&lt;damage&gt;[^|]*)\|(?:[^|]*\|){14}(?&lt;targetCurrentHp&gt;[^|]*)\|(?&lt;targetMaxHp&gt;[^|]*)\|(?&lt;targetCurrentMp&gt;[^|]*)\|(?&lt;targetMaxMp&gt;[^|]*)\|(?:[^|]*\|){2}(?&lt;targetX&gt;[^|]*)\|(?&lt;targetY&gt;[^|]*)\|(?&lt;targetZ&gt;[^|]*)\|(?&lt;targetHeading&gt;[^|]*)\|(?&lt;currentHp&gt;[^|]*)\|(?&lt;maxHp&gt;[^|]*)\|(?&lt;currentMp&gt;[^|]*)\|(?&lt;maxMp&gt;[^|]*)\|(?:[^|]*\|){2}(?&lt;x&gt;[^|]*)\|(?&lt;y&gt;[^|]*)\|(?&lt;z&gt;[^|]*)\|(?&lt;heading&gt;[^|]*)\|(?&lt;sequence&gt;[^|]*)\|(?&lt;targetIndex&gt;0)\|(?&lt;targetCount&gt;[^|]*)\|" Description="Spells:&#xD;&#xA;Fire in Red|Aero in Green|Water in Blue|Fire II in Red|Pom Motif|Wing Motif|Aero II in Green|Water II in Blue|Hammer Stamp|Hammer Motif|Blizzard in Cyan|Blizzard II in Cyan|Stone in Yellow|Thunder in Magenta|Stone II in Yellow|Thunder II in Magenta|Starry Sky Motif|Holy in White|Hammer Brush|Polishing Hammer|Comet in Black|Rainbow Drip|Claw Motif|Maw Motif|Star Prism|Sleep&#xD;&#xA;&#xD;&#xA;Abilties:&#xD;&#xA;Tempera Coat|Smudge|Mog of the Ages|Pom Muse|Winged Muse|Striking Muse|Subtractive Palette|Starry Muse|Tempera Grassa|Clawed Muse|Fanged Muse|Retribution of the Madeen|Addle|Lucid Dreaming|Swiftcast|Surecast">
+        <Actions>
+          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="actionName" VariableExpression="${ability}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="actionFlags" VariableExpression="${flags}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="playerLevel" VariableExpression="${_ffxivparty[${_ffxivplayer}].level}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" TriggerId="d9790e00-d957-4397-9715-fd8b88244fe7" TriggerForce="regexp" ActionType="Trigger">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="^(?:Fire in Red|Aero in Green|Water in Blue|Fire II in Red|Pom Motif|Wing Motif|Aero II in Green|Water II in Blue|Hammer Stamp|Hammer Motif|Blizzard in Cyan|Blizzard II in Cyan|Stone in Yellow|Thunder in Magenta|Stone II in Yellow|Thunder II in Magenta|Starry Sky Motif|Holy in White|Hammer Brush|Polishing Hammer|Comet in Black|Rainbow Drip|Claw Motif|Maw Motif|Star Prism|Sleep)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" TriggerId="24be37f2-bd67-4ba7-8615-b4295d4efcf1" TriggerForce="regexp" ActionType="Trigger">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:actionName}" ExpressionTypeL="String" ExpressionR="^(?:Tempera Coat|Smudge|Mog of the Ages|Pom Muse|Winged Muse|Striking Muse|Subtractive Palette|Starry Muse|Tempera Grassa|Clawed Muse|Fanged Muse|Retribution of the Madeen|Addle|Lucid Dreaming|Swiftcast|Surecast)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="true" Grouping="And">
+          <ConditionSingle Enabled="true" ExpressionL="${source}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+        </Condition>
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="PCT Keypresses (Numpad Key OGCDs)" Id="5c87da04-b40b-423f-b548-4cc1b40c325c" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="playerMP" VariableExpression="${_ffxivparty[${_ffxivplayer}].currentmp}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="targetID" VariableExpression="${func:padleft(48,8):${_ffxivparty[${_ffxivplayer}].targetid}}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="targetType" VariableExpression="${func:substring(0,2):${var:targetID}}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="targetDistance" VariableExpression="${_ffxiventity[${var:targetID}].distance}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="0" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="burstWindow" VariableExpression="floor(${_duration}/120)" TriggerForce="conditions" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="12" ActionType="Variable" Description="Lucid Dreaming" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Lucid Dreaming Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="24" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerMP}" ExpressionTypeL="Numeric" ExpressionR="5000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="1" ActionType="Variable" Description="Living Muse (outside of burst)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^(?:Pom|Wings|Claw|Fangs)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="40500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+13400" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="80500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-40000" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+13400" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:aoeToggle}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^Wings$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Portrait}" ExpressionTypeL="String" ExpressionR="^Moogle$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^Fangs$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Portrait}" ExpressionTypeL="String" ExpressionR="^Madeen$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="1" ActionType="Variable" Description="Steel Muse (outside of burst)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^(?:Hammer)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="86" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}+60000" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+13400" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="86" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="60500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+13400" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:aoeToggle}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="2" ActionType="Variable" Description="Mog of the Ages / Retribution of the Madeen (outside of burst)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Mog of the Ages Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Portrait}" ExpressionTypeL="String" ExpressionR="^(?:Moogle|Madeen)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+13400" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-40000" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+13400" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                </ConditionGroup>
+                <ConditionSingle Enabled="true" ExpressionL="${var:aoeToggle}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Mog of the Ages Recast}+30000" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+16700" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="1" Enabled="False" ActionType="Variable" Description="Living Muse (attempt to hold Wings and Fangs for Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^(?:Pom|Wings|Claw|Fangs)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="40500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+13400" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="80500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-40000" ExpressionTypeL="Numeric" ExpressionR="${var:Scenic Muse Recast}+13400" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:aoeToggle}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                <ConditionGroup Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^Wings$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                </ConditionGroup>
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Portrait}" ExpressionTypeL="String" ExpressionR="^Moogle$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^Fangs$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Portrait}" ExpressionTypeL="String" ExpressionR="^Madeen$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="12" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="1" ActionType="Variable" Description="Living Muse (Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="40500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="80500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^Wings$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Portrait}" ExpressionTypeL="String" ExpressionR="^Moogle$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^Fangs$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Portrait}" ExpressionTypeL="String" ExpressionR="^Madeen$" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+              </ConditionGroup>
+              <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^(?:Pom|Wings|Claw|Fangs)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:aoeToggle}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="13" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="2" ActionType="Variable" Description="Mog of the Ages / Retribution of the Madeen (Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Mog of the Ages Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Portrait}" ExpressionTypeL="String" ExpressionR="^(?:Moogle|Madeen)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:aoeToggle}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="14" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="3" ActionType="Variable" Description="Steel Muse (Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="^Hammer$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="86" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="60500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Scenic Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="10000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:aoeToggle}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="4" ActionType="Variable" Description="Subtractive Palette (Starry Muse)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Palette Gauge}" ExpressionTypeL="Numeric" ExpressionR="50" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Spectrum Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:aoeToggle}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              </ConditionGroup>
+              <ConditionSingle Enabled="true" ExpressionL="${var:Monochrome Tones Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="4" ActionType="Variable" Description="Subtractive Palette (prevent Palette overcap)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Subtractive Palette Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Monochrome Tones Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Aetherhues II Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Palette Gauge}" ExpressionTypeL="Numeric" ExpressionR="75" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="12" ActionType="Variable" Description="Lucid Dreaming (very low MP)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Lucid Dreaming Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="24" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerMP}" ExpressionTypeL="Numeric" ExpressionR="1000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="18" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="5" ActionType="Variable" Description="Starry Muse" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Scenic Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Landscape Canvas}" ExpressionTypeL="String" ExpressionR="^Starry Sky$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:burstWindow}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="19" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="5" ActionType="Variable" Description="Starry Muse (initial burst)" DescriptionOverride="True">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:Scenic Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="500" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="70" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+              <ConditionSingle Enabled="false" ExpressionL="${var:Starry Muse Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:Landscape Canvas}" ExpressionTypeL="String" ExpressionR="^Starry Sky$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:burstWindow}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^(?:Pom|Wings)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Portrait}" ExpressionTypeL="String" ExpressionR="^Moogle$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </ConditionGroup>
+                <ConditionSingle Enabled="true" ExpressionL="${var:Creature Canvas}" ExpressionTypeL="String" ExpressionR="^Wings$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Hammer Time Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Weapon Canvas}" ExpressionTypeL="String" ExpressionR="^Hammer$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Steel Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="10000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="Or">
+                <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="55000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                <ConditionGroup Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerLevel}" ExpressionTypeL="Numeric" ExpressionR="96" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Living Muse Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="95000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </ConditionGroup>
+              </ConditionGroup>
+              <ConditionSingle Enabled="true" ExpressionL="${var:Mog of the Ages Recast}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="15000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="20" KeypressType="WindowMessage" KeyPressCode="${var:numpadKey}+95" KeyPressWindow="^FINAL FANTASY XIV$" KeyPressProcId="${_ffxivprocid}" SoundRouting="None" TTSRouting="None" ActionType="KeyPress" Description="96+1 is Num0&#xD;&#xA;96+10 is Num9&#xD;&#xA;96+11 is Num*&#xD;&#xA;96+12 is Num+&#xD;&#xA;">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:numpadKey}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="true" Grouping="And">
+          <ConditionSingle Enabled="true" ExpressionL="${_incombat}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        </Condition>
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
