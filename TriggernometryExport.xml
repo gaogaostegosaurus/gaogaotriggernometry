@@ -7536,13 +7536,7 @@
               <Action OrderNumber="24" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="numpadKey" VariableExpression="5" ActionType="Variable" Description="Earth's Reply" DescriptionOverride="True">
                 <Condition Enabled="true" Grouping="And">
                   <ConditionSingle Enabled="true" ExpressionL="${var:Earth's Rumination Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                  <ConditionGroup Enabled="true" Grouping="Or">
-                    <ConditionGroup Enabled="true" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${var:playerHealth}" ExpressionTypeL="Numeric" ExpressionR="0.5" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:Bloodbath Duration}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
-                    </ConditionGroup>
-                    <ConditionSingle Enabled="true" ExpressionL="${var:playerHealth}" ExpressionTypeL="Numeric" ExpressionR="0.75" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                  </ConditionGroup>
+                  <ConditionSingle Enabled="true" ExpressionL="${var:playerHealth}" ExpressionTypeL="Numeric" ExpressionR="0.9" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                 </Condition>
               </Action>
               <Action OrderNumber="25" KeypressType="WindowMessage" KeyPressCode="${var:numpadKey}+95" KeyPressWindow="^FINAL FANTASY XIV$" KeyPressProcId="${_ffxivprocid}" SoundRouting="None" TTSRouting="None" ActionType="KeyPress" Description="96+1 is Num0&#xD;&#xA;96+10 is Num9&#xD;&#xA;96+11 is Num*&#xD;&#xA;96+12 is Num+&#xD;&#xA;">
